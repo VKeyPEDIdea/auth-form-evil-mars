@@ -5,9 +5,11 @@ const AuthPage = () => {
   return (
     <gradient-box>
       <card-box>
-        <h1>Sign up</h1>
-        <TextField name="Email" type="email" />
-        <TextField name="Password" type="password" />
+        <list-grid>
+          <h1>Sign up</h1>
+          <TextField name="Email" type="email" />
+          <TextField name="Password" type="password" />
+        </list-grid>
       </card-box>
     </gradient-box>
   );

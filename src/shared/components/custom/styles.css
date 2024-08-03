@@ -10,6 +10,35 @@ gradient-box {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-image: radial-gradient(100% 100% at 50% 100%, #feb2b2 0%, rgba(252, 184, 219, 0.75) 25%, rgba(239, 194, 250, 0.5) 50%, rgba(190, 227, 248, 0) 100%), linear-gradient(134deg, #2c4672 0%, #325e7a 7%, #387687 14%, #3b8f95 21%, #3ca9a0 28%, #37c4a5 35%, #1fff4f 49%, #a2e500 56.29%, #c7cc00 63.57%, #dbb500 70.86%, #ec9b00 78.14%, #ff7936 85.43%, #ff1fa5 100%)
+  background-image:
+    radial-gradient(
+      100% 100% at 50% 100%,
+      #feb2b2 0%,
+      rgba(252, 184, 219, 0.75) 25%,
+      rgba(239, 194, 250, 0.5) 50%,
+      rgba(190, 227, 248, 0) 100%
+    ),
+    linear-gradient(
+      134deg,
+      #2c4672 0%,
+      #325e7a 7%,
+      #387687 14%,
+      #3b8f95 21%,
+      #3ca9a0 28%,
+      #37c4a5 35%,
+      #1fff4f 49%,
+      #a2e500 56.29%,
+      #c7cc00 63.57%,
+      #dbb500 70.86%,
+      #ec9b00 78.14%,
+      #ff7936 85.43%,
+      #ff1fa5 100%
+    )
 }
 
+list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}

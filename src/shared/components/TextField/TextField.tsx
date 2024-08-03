@@ -8,12 +8,12 @@ interface TextFieldProps {
 
 const TextField: React.FC<TextFieldProps> = ({ type, name }) => {
   return (
-    <>
+    <div>
       <label htmlFor="name" className={styles.label}>
         {name}
       </label>
       <input type={type} name="name" className={styles.field} />
-    </>
+    </div>
   );
 };
 

@@ -10,5 +10,9 @@ declare namespace JSX {
       React.HTMLAttributes<HTMLElement>,
       HTMLElement
     >;
+    'list-grid': React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLElement>,
+      HTMLElement
+    >;
   }
 }
