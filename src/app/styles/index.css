@@ -1,2 +1,6 @@
 @import "./normalize.css";
 @import "./variables.css";
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+}
