@@ -1,5 +1,9 @@
 :root {
   --color-white: #fff;
+  --color-light-gray: #ccc;
+  --color-blue-bright: #363dc2;
+  --color-blueberry: #282faf;
+
   --sz-base: 4px;
   --sz-1: var(--sz-base);
   --sz-2: calc(2 * var(--sz-base));

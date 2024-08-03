@@ -1,12 +1,16 @@
 .field {
   display: block;
-  padding: 4px 8px;
+  padding: var(--sz-1) var(--sz-3);
   font-size: 16px;
-  line-height: 20px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  line-height: var(--sz-8);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--sz-1);
 }
 
 .label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: var(--sz-2);
   font-size: 14px;
 }
