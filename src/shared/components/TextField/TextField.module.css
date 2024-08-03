@@ -1,0 +1,11 @@
+.field {
+  display: block;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+}

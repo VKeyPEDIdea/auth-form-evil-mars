@@ -13,6 +13,7 @@ export default defineConfig({
       api: path.resolve(__dirname, 'src/api'),
       app: path.resolve(__dirname, 'src/app'),
       pages: path.resolve(__dirname, 'src/pages'),
+      shared: path.resolve(__dirname, 'src/shared'),
     },
   },
   plugins: [react()],
