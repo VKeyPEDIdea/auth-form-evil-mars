@@ -1,20 +1,13 @@
 import React from 'react';
-
-class HelloWorldComponent extends HTMLElement {
-  constructor() {
-    super();
-  }
-}
-
-customElements.define('hello-world', HelloWorldComponent);
+import { TextField, CardBox } from 'shared/components';
 
 const AuthPage = () => {
   return (
-    <>
-      <h1>Auth Page</h1>
-      <p>Description text</p>
-      <hello-world>Hello</hello-world>
-    </>
+    <CardBox>
+      <h1>Sign up</h1>
+      <TextField name="Email" type="email" />
+      <TextField name="Password" type="password" />
+    </CardBox>
   );
 };
 
