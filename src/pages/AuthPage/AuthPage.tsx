@@ -7,7 +7,6 @@ const AuthPage = () => {
     <gradient-box>
       <card-box>
         <list-grid>
-          <h1>Sign up</h1>
           <TextField name="Email" type="email" />
           <TextField name="Password" type="password" />
         </list-grid>

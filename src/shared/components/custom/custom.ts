@@ -21,7 +21,14 @@ class ListGridComponent extends HTMLElement {
   }
 }
 
+class MyButtonComponent extends HTMLElement {
+  constructor() {
+    super();
+  }
+}
+
 customElements.define('gradient-box', GradientBoxComponent);
 customElements.define('card-box', CardBoxComponent);
 customElements.define('card-box-actions', CardBoxActionsComponent);
 customElements.define('list-grid', ListGridComponent);
+customElements.define('my-button', MyButtonComponent, { extends: 'button' });

@@ -1,13 +1,16 @@
-.button {
+button[is="my-button"] {
   display: block;
   min-width: 150px;
+  width: max-content;
   height: var(--sz-button-h);
+  padding: var(--sz-2) var(--sz-8);
   border: var(--sz-1) solid var(--color-blueberry);
   border-radius: calc(var(--sz-button-h) / 2);
   background-color: var(--color-pink);
   color: var(--color-white);
+  line-height: var(--sz-6);
   font-family: var(--ff-main);
-  text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 14px;
+  text-transform: uppercase;
 }

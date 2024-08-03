@@ -10,6 +10,7 @@ card-box {
 card-box-actions {
   display: block;
   position: absolute;
+  width: -moz-available;
   transform: translate(-50%);
   height: var(--sz-button-h);
   bottom: calc(var(--sz-button-h) / -2);
