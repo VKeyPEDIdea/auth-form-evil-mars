@@ -3,6 +3,7 @@
   --color-light-gray: #ccc;
   --color-blue-bright: #363dc2;
   --color-blueberry: #282faf;
+  --color-pink: #f52b89;
 
   --sz-base: 4px;
   --sz-1: var(--sz-base);
@@ -15,4 +16,9 @@
   --sz-8: calc(8 * var(--sz-base));
   --sz-9: calc(9 * var(--sz-base));
   --sz-10: calc(10 * var(--sz-base));
+  --sz-12: calc(12 * var(--sz-base));
+
+  --sz-button-h: var(--sz-12);
+  
+  --ff-main: 'Monstserrat', sans-serif;
 }

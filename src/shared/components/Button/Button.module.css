@@ -1,0 +1,13 @@
+.button {
+  display: block;
+  min-width: 150px;
+  height: var(--sz-button-h);
+  border: var(--sz-1) solid var(--color-blueberry);
+  border-radius: calc(var(--sz-button-h) / 2);
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  font-family: var(--ff-main);
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 14px;
+}

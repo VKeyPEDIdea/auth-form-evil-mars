@@ -9,6 +9,12 @@ class CardBoxComponent extends HTMLElement {
   }
 }
 
+class CardBoxActionsComponent extends HTMLElement {
+  constructor() {
+    super();
+  }
+}
+
 class ListGridComponent extends HTMLElement {
   constructor() {
     super();
@@ -17,4 +23,5 @@ class ListGridComponent extends HTMLElement {
 
 customElements.define('gradient-box', GradientBoxComponent);
 customElements.define('card-box', CardBoxComponent);
+customElements.define('card-box-actions', CardBoxActionsComponent);
 customElements.define('list-grid', ListGridComponent);

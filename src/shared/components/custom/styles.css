@@ -2,9 +2,18 @@ card-box {
   display: block;
   position: relative;
   background-color: var(--color-white);
-  padding: var(--sz-10) var(--sz-5);
+  padding: var(--sz-10) var(--sz-5) var(--sz-12);
   border-radius: var(--sz-2);
   z-index: 2;
+}
+
+card-box-actions {
+  display: block;
+  position: absolute;
+  transform: translate(-50%);
+  height: var(--sz-button-h);
+  bottom: calc(var(--sz-button-h) / -2);
+  left: 50%;
 }
 
 gradient-box {
