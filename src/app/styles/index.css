@@ -3,4 +3,5 @@
 
 html, body {
   font-family: 'Montserrat', sans-serif;
+  color: var(--color-white);
 }

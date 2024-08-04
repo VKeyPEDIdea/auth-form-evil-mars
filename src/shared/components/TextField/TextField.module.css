@@ -13,4 +13,5 @@
   display: block;
   margin-bottom: var(--sz-2);
   font-size: 14px;
+  color: var(--color-black);
 }

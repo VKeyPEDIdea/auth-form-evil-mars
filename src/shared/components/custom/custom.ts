@@ -1,34 +1,41 @@
-class GradientBoxComponent extends HTMLElement {
+class BackgroundBox extends HTMLElement {
   constructor() {
     super();
   }
 }
-class CardBoxComponent extends HTMLElement {
-  constructor() {
-    super();
-  }
-}
-
-class CardBoxActionsComponent extends HTMLElement {
+class CardBox extends HTMLElement {
   constructor() {
     super();
   }
 }
 
-class ListGridComponent extends HTMLElement {
+class CardBoxActions extends HTMLElement {
   constructor() {
     super();
   }
 }
 
-class MyButtonComponent extends HTMLElement {
+class ListGrid extends HTMLElement {
   constructor() {
     super();
   }
 }
 
-customElements.define('gradient-box', GradientBoxComponent);
-customElements.define('card-box', CardBoxComponent);
-customElements.define('card-box-actions', CardBoxActionsComponent);
-customElements.define('list-grid', ListGridComponent);
-customElements.define('my-button', MyButtonComponent, { extends: 'button' });
+class MyButton extends HTMLButtonElement {
+  constructor() {
+    super();
+  }
+}
+
+class BackgroundBoxContent extends HTMLElement {
+  constructor() {
+    super();
+  }
+}
+
+customElements.define('background-box', BackgroundBox);
+customElements.define('card-box', CardBox);
+customElements.define('card-box-actions', CardBoxActions);
+customElements.define('background-box-content', BackgroundBoxContent);
+customElements.define('list-grid', ListGrid);
+customElements.define('my-button', MyButton, { extends: 'button' });

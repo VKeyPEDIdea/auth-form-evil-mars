@@ -9,7 +9,8 @@ declare namespace JSX {
   interface IntrinsicElements {
     'card-box': Custom;
     'card-box-actions': Custom;
-    'gradient-box': Custom;
+    'background-box': Custom;
+    'background-box-content': Custom;
     'list-grid': Custom;
   }
 }

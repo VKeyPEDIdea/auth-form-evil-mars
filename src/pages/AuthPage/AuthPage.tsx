@@ -4,17 +4,22 @@ import Button from 'shared/components/Button';
 
 const AuthPage = () => {
   return (
-    <gradient-box>
-      <card-box>
+    <background-box>
+      <background-box-content>
         <list-grid>
-          <TextField name="Email" type="email" />
-          <TextField name="Password" type="password" />
+          <h1>Sign up</h1>
+          <card-box>
+            <list-grid>
+              <TextField name="Email" type="email" />
+              <TextField name="Password" type="password" />
+            </list-grid>
+            <card-box-actions>
+              <Button name="Sign up" onClick={() => {}} />
+            </card-box-actions>
+          </card-box>
         </list-grid>
-        <card-box-actions>
-          <Button name="Sign up" onClick={() => {}} />
-        </card-box-actions>
-      </card-box>
-    </gradient-box>
+      </background-box-content>
+    </background-box>
   );
 };
 
