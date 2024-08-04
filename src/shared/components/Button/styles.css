@@ -21,8 +21,14 @@ button[is="my-button"]:hover {
   background-color: var(--color-pink-2);
 }
 
+button[is='my-button']:disabled {
+  cursor: not-allowed;
+  background-color: var(--color-light-gray)
+}
+
 button[is="my-button"][data-color="transparent"] {
   background-color: transparent;
+  border: none;
 }
 
 button[is="my-button"][data-color="transparent"]:hover {

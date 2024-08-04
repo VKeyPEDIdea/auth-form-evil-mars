@@ -1,5 +1,7 @@
 card-box {
   display: block;
+  width: 360px;
+  box-sizing: border-box;
   position: relative;
   background-color: var(--color-white);
   padding: var(--sz-10) var(--sz-5) var(--sz-12);
@@ -7,7 +9,8 @@ card-box {
 }
 
 card-box-actions {
-  display: block;
+  display: flex;
+  justify-content: center;
   position: absolute;
   width: -moz-available;
   transform: translate(-50%);
@@ -28,8 +31,8 @@ background-box::before {
   content: '';
   display: block;
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   left: 50%;
   top: 50%;
   border-radius: 50%;
