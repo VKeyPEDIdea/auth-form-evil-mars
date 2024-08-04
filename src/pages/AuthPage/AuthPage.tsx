@@ -20,6 +20,11 @@ const AuthPage = () => {
               <Button name="Sign up" onClick={() => {}} />
             </card-box-actions>
           </card-box>
+          <Button
+            name="Log in to an existing account"
+            color="transparent"
+            onClick={() => {}}
+          />
         </list-grid>
       </background-box-content>
     </background-box>

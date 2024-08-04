@@ -13,4 +13,18 @@ button[is="my-button"] {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[is="my-button"]:hover {
+  background-color: var(--color-pink-2);
+}
+
+button[is="my-button"][data-color="transparent"] {
+  background-color: transparent;
+}
+
+button[is="my-button"][data-color="transparent"]:hover {
+  background-color: var(--color-blueberry-2);
 }

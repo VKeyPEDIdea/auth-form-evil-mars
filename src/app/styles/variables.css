@@ -4,7 +4,9 @@
   --color-light-gray: #ccc;
   --color-blue-bright: #363dc2;
   --color-blueberry: #282faf;
+  --color-blueberry-2: #0d1388;
   --color-pink: #f52b89;
+  --color-pink-2: #fc0879;
 
   --sz-base: 4px;
   --sz-1: var(--sz-base);
