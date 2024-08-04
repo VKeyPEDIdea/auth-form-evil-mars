@@ -6,8 +6,11 @@ const AuthPage = () => {
   return (
     <background-box>
       <background-box-content>
+        <top-bar>
+          <logo-type>SPA example</logo-type>
+        </top-bar>
         <list-grid>
-          <h1>Sign up</h1>
+          <h1>Authorization</h1>
           <card-box>
             <list-grid>
               <TextField name="Email" type="email" />

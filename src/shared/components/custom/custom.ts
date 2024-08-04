@@ -33,9 +33,16 @@ class BackgroundBoxContent extends HTMLElement {
   }
 }
 
+class TopBar extends HTMLElement {
+  constructor() {
+    super();
+  }
+}
+
 customElements.define('background-box', BackgroundBox);
 customElements.define('card-box', CardBox);
 customElements.define('card-box-actions', CardBoxActions);
 customElements.define('background-box-content', BackgroundBoxContent);
 customElements.define('list-grid', ListGrid);
 customElements.define('my-button', MyButton, { extends: 'button' });
+customElements.define('top-bar', TopBar);

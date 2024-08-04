@@ -12,5 +12,7 @@ declare namespace JSX {
     'background-box': Custom;
     'background-box-content': Custom;
     'list-grid': Custom;
+    'top-bar': Custom;
+    'logo-type': Custom;
   }
 }
