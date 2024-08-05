@@ -1,15 +1,13 @@
 interface Fields {
   email: string;
   password: string;
-  confirmPassword: string;
 }
 
-const validate = ({ email, password, confirmPassword }: Fields) => {
+const validate = ({ email, password }: Fields) => {
   let isValid = true;
   const errors = {
     email: '',
     password: '',
-    confirmPassword: '',
   };
 
   if (email === '') {
@@ -26,15 +24,6 @@ const validate = ({ email, password, confirmPassword }: Fields) => {
   } else if (password.length < 6) {
     isValid = false;
     errors.password = 'Password is too short. Please use at least 6 characters';
-  }
-
-  if (confirmPassword === '') {
-    isValid = false;
-    errors.confirmPassword = 'Password should not be empty';
-  } else if (password !== confirmPassword) {
-    isValid = false;
-    errors.confirmPassword =
-      'Confirm Password value is not equal to Password value.';
   }
 
   return { isValid, errors };

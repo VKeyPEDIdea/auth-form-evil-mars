@@ -7,11 +7,6 @@ import validate from './validate';
 
 const SignUpForm = () => {
   const navigate = useNavigate();
-  // const fieldErrors = useSignal({
-  //   email: '',
-  //   password: '',
-  //   confirmPassword: '',
-  // });
   const email = useSignal('');
   const emailError = useSignal('');
   const password = useSignal('');
@@ -19,7 +14,7 @@ const SignUpForm = () => {
   const confirmPassword = useSignal('');
   const confirmPasswordError = useSignal('');
   const [isDirty, setIsDirty] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(true);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const validateForm = () => {
     const { errors, isValid } = validate({
@@ -36,6 +31,9 @@ const SignUpForm = () => {
   const onSignupClick = () => {
     setIsDirty(true);
     validateForm();
+    if (isFormValid) {
+      console.log('submit');
+    }
   };
 
   const onFieldChange = (
@@ -75,7 +73,7 @@ const SignUpForm = () => {
           <Button
             name="Sign up"
             onClick={onSignupClick}
-            disabled={!isFormValid}
+            disabled={isDirty && !isFormValid}
           />
         </card-box-actions>
       </card-box>
