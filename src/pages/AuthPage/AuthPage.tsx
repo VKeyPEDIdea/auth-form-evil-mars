@@ -5,7 +5,6 @@ import { Outlet, useLocation, useNavigate } from 'react-router';
 const AuthPage = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(pathname, ROUTES.root);
 
   useEffect(() => {
     if (pathname === ROUTES.root) navigate(ROUTES.login);
