@@ -1,7 +1,7 @@
 const basename = 'auth-form-evil-mars';
 
 const ROUTES = {
-  root: `/${basename}`,
+  root: `/${basename}/`,
   login: `/${basename}/login`,
   signup: `/${basename}/signup`,
 };
