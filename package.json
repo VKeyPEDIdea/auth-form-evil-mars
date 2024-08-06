@@ -2,6 +2,7 @@
   "name": "auth-form-evil-mars",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vkeypedidea.github.io/auth-form-evil-mars/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -9,7 +10,8 @@
     "test": "vitest",
     "test:cov": "vitest run --coverage",
     "lint": "tsc && eslint --ext .ts,.tsx,.js,.jsx src",
-    "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx src --fix"
+    "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx src --fix",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@preact/signals-react": "^2.0.1",
@@ -56,6 +58,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "."
+  }
 }
