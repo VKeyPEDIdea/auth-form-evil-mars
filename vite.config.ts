@@ -12,6 +12,7 @@ export default defineConfig({
     alias: {
       api: path.resolve(__dirname, 'src/api'),
       app: path.resolve(__dirname, 'src/app'),
+      mock: path.resolve(__dirname, 'src/mock'),
       pages: path.resolve(__dirname, 'src/pages'),
       shared: path.resolve(__dirname, 'src/shared'),
     },

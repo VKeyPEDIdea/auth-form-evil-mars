@@ -88,3 +88,7 @@ logo-type {
   letter-spacing: 3px;
   text-align: center;
 }
+
+p[is="error-text"] {
+  color: var(--color-red);
+}

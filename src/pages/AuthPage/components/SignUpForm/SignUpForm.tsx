@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import ROUTES from 'app/routes';
 import { useNavigate } from 'react-router';
-import { TextField, Button } from 'shared/components';
 import { Signal, useSignal } from '@preact/signals-react';
+import ROUTES from 'app/routes';
+import { TextField, Button } from 'shared/components';
+import mockFetch from 'mock/mockFetch';
 import validate from './validate';
 
 const SignUpForm = () => {
@@ -15,6 +16,9 @@ const SignUpForm = () => {
   const confirmPasswordError = useSignal('');
   const [isDirty, setIsDirty] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [authResponse, setAuthResponse] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
 
   const validateForm = () => {
     const { errors, isValid } = validate({
@@ -26,14 +30,29 @@ const SignUpForm = () => {
     emailError.value = errors.email;
     passwordError.value = errors.password;
     confirmPasswordError.value = errors.confirmPassword;
+    return isValid;
   };
 
-  const onSignupClick = () => {
+  const onSignupClick = async () => {
     setIsDirty(true);
-    validateForm();
-    if (isFormValid) {
-      console.log('submit');
+    const isValid = validateForm();
+    if (isValid) {
+      try {
+        setIsFetching(true);
+        const response = await mockFetch('/api/signup', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          setIsAuthenticated(true);
+          setAuthResponse(JSON.parse(response.json).message);
+        }
+      } catch (error) {
+        setAuthResponse((error as { message: string }).message);
+      }
     }
+    setIsFetching(false);
   };
 
   const onFieldChange = (
@@ -45,6 +64,19 @@ const SignUpForm = () => {
       validateForm();
     }
   };
+
+  if (isAuthenticated) {
+    return (
+      <>
+        <p>{authResponse}</p>
+        <Button
+          name="Go to login"
+          onClick={() => navigate(ROUTES.login)}
+          color="transparent"
+        />
+      </>
+    );
+  }
 
   return (
     <>
@@ -68,12 +100,14 @@ const SignUpForm = () => {
             error={confirmPasswordError}
             onChange={(e) => onFieldChange(e, confirmPassword)}
           />
+          {authResponse && <p is="error-text">{authResponse}</p>}
         </list-grid>
         <card-box-actions>
           <Button
             name="Sign up"
             onClick={onSignupClick}
             disabled={isDirty && !isFormValid}
+            isLoading={isFetching}
           />
         </card-box-actions>
       </card-box>

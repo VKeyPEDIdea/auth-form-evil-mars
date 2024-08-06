@@ -14,5 +14,6 @@ declare namespace JSX {
     'list-grid': Custom;
     'top-bar': Custom;
     'logo-type': Custom;
+    'error-text': Custom;
   }
 }

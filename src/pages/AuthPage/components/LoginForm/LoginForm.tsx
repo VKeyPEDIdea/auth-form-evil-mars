@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import ROUTES from 'app/routes';
-import { TextField, Button } from 'shared/components';
 import { Signal, useSignal } from '@preact/signals-react';
+import ROUTES from 'app/routes';
+import mockFetch from 'mock/mockFetch';
+import { TextField, Button } from 'shared/components';
 import validate from './validate';
 
 const LoginForm = () => {
@@ -13,6 +14,9 @@ const LoginForm = () => {
   const passwordError = useSignal('');
   const [isDirty, setIsDirty] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [authResponse, setAuthResponse] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
 
   const validateForm = () => {
     const { errors, isValid } = validate({
@@ -22,14 +26,29 @@ const LoginForm = () => {
     setIsFormValid(isValid);
     emailError.value = errors.email;
     passwordError.value = errors.password;
+    return isValid;
   };
 
-  const onLoginClick = () => {
+  const onLoginClick = async () => {
     setIsDirty(true);
-    validateForm();
-    if (isFormValid) {
-      console.log('submit');
+    const isValid = validateForm();
+    if (isValid) {
+      try {
+        setIsFetching(true);
+        const response = await mockFetch('/api/login', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          setIsAuthenticated(true);
+          setAuthResponse(JSON.parse(response.json).message);
+        }
+      } catch (error) {
+        setAuthResponse((error as { message: string }).message);
+      }
     }
+    setIsFetching(false);
   };
 
   const onFieldChange = (
@@ -41,6 +60,19 @@ const LoginForm = () => {
       validateForm();
     }
   };
+
+  if (isAuthenticated) {
+    return (
+      <>
+        <p>{authResponse}</p>
+        <Button
+          name="Back to auth"
+          onClick={() => navigate(ROUTES.root)}
+          color="transparent"
+        />
+      </>
+    );
+  }
 
   return (
     <>
@@ -58,12 +90,14 @@ const LoginForm = () => {
             error={passwordError}
             onChange={(e) => onFieldChange(e, password)}
           />
+          {authResponse && <p is="error-text">{authResponse}</p>}
         </list-grid>
         <card-box-actions>
           <Button
             name="Log in"
             onClick={onLoginClick}
             disabled={isDirty && !isFormValid}
+            isLoading={isFetching}
           />
         </card-box-actions>
       </card-box>

@@ -6,6 +6,7 @@ interface ButtonProps {
   onClick: () => void;
   color?: 'transparent';
   disabled?: boolean;
+  isLoading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   color = null,
   disabled,
+  isLoading,
 }) => {
   return (
     <button
@@ -21,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
       data-color={color}
       onClick={onClick}
       disabled={disabled ? true : undefined}
+      data-loading={isLoading}
     >
       {name}
     </button>
